@@ -14,8 +14,7 @@
 ---
 
 <p align="left"> <b>Tintype¶Text</b> is a tool enabling you to convert scanned typewritten pages (in JPEG image format) to a rich text format (RTF) 
-  document, complete with formatting elements such as text alignment, paragraphs, <u>underline</u>, <i>italics</i>, <b>bold</b>, 
-  <del>strikethrough</del>, <sup>superscript</sup> and <sub>subscript</sub>. </p>
+  document, complete with formatting elements such as text alignment, paragraphs, <u>underline</u>, <i>italics</i>, <b>bold</b> and <del>strikethrough</del>. </p>
 <p align="left"> A neat feature of <b>Tintype¶Text</b> is that the typos (wrong typewritten characters overlaid with a hashtag)
   automatically get filtered out, and do not appear in the final RTF text. 
     <br> 
@@ -35,7 +34,7 @@
   
 - A deep learning model trained on a specific typewriter is unlikely to generalize well to other typewriter brands, which may use different 
   typesets and character spacing. It is therefore preferable to train a model on your own typewriter.
-- For best results, the typewritten text should be <b>double spaced</b> to avoid segmentation mistakes or omissions.
+- For best results, the typewritten text should be <b>double spaced</b> to avoid segmentation mistakes or omissions and the 8 1/2" x 11" typewritten pages should be <b>scanned at a resolution of 600 dpi</b>, as this resolution was used when writing the code.
 - Every typewritten line should have <b>at least five adjoining letters</b> in order to be properly detected. Should a line only contain a word with 
   four or fewer letters, one could make up for the missing letters by using any character (other than "#") overlaid with a hashtag, which will 
   be interpreted by the code as an empty string, and will not impact the meaningful text on the line in the final rich text format (RTF) document.
@@ -110,6 +109,9 @@ of every rectangle to a label will allow to generate a dataset of character imag
 page images overlayed with the character rectangles are stored in the "Page image files with rectangles" folder, which is created
 automatically by the code.
 
+<b>You might need to alter the values of the variables "character_width" (default value of 55 pixels for 8 1/2" x 11" typewritten pages 
+  scanned at a resolution of 600 dpi) and "spacer_between_character" default value of 5 pixels, as your typewriter may have a different typeset than that of my typewriter (1968 Olivetti Underwood Lettra 33).</b>
+
  <b>File 2: create_dataset.py</b>- This code will crop the individual characters in the same way as the create_rectangles.py code,
  and will then open the "txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
  label subfolder within the Dataset folder, which is created automatically by the code.
@@ -148,7 +150,7 @@ automatically by the code.
   <b>Please note that all of the JPEG file names in the "OCR Raw Data" folder must contain at least one hyphen ("-") in order for the code
   to properly create subfolders in the "OCR Predictions" folder. These subfolders will contain the rich text format (RTF) OCR conversion documents. 
   
-  Furthermore, the ".txt" files in the "Training&Validation Data" folder must have identical names to their corresponding JPEG images (minus the file extensions).</b> 
+  Furthermore, the ".txt" files in the "Training&Validation Data" folder must have identical names to their corresponding JPEG images (minus the file extensions).</b>
   
   The reason for this is that when you will scan a multi-page document in a multi-page scanner, you will provide you scanner with a file root name (e.g. "my_text-") and the 
   scanner will number them automatically (e.g."my_text-.jpg", "my_text-0001.jpg", "my_text-0002.jpg", "my_text-"0003.jpg", etc.) and the code would then label the
