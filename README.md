@@ -13,8 +13,8 @@
 
 ---
 
-<p align="left"> <b>Tintype¶Text</b> is a tool enabling you to convert scanned typewritten pages (in JPEG image format) to a rich text format (RTF) 
-  document, complete with formatting elements such as text alignment, paragraphs, <u>underline</u>, <i>italics</i>, <b>bold</b> and <del>strikethrough</del>. </p>
+<p align="left"> <b>Tintype¶Text</b> is a tool enabling you to convert scanned typewritten pages (in JPEG image format) into rich text format (RTF) 
+  documents, complete with formatting elements such as text alignment, paragraphs, <u>underline</u>, <i>italics</i>, <b>bold</b> and <del>strikethrough</del>. </p>
 <p align="left"> A neat feature of <b>Tintype¶Text</b> is that the typos (wrong typewritten characters overlaid with a hashtag)
   automatically get filtered out, and do not appear in the final RTF text. 
     <br> 
