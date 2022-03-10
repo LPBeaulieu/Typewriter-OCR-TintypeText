@@ -160,7 +160,7 @@ automatically by the code.
   
 ## ✍️ Authors <a name = "authors"></a>
 - 👋 Hi, I’m Louis-Philippe!
-- 👀 I’m interested in natural language processing (NLP) and everything to do with words, really! 📝
+- 👀 I’m interested in natural language processing (NLP) and anything to do with words, really! 📝
 - 🌱 I’m currently reading about deep learning (and reviewing the underlying math involved in coding such applications 🧮😕)
 - 📫 How to reach me: By e-mail! LPBeaulieu@gmail.com 💻
 
