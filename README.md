@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/demo.jpg" alt="Welcome to Tintype¶Text!"></a>
+ <img src="" alt="Welcome to Tintype¶Text!"></a>
 </p>
 <h3 align="center">Tintype¶Text</h3>
 
