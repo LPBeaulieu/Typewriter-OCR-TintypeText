@@ -40,7 +40,7 @@
   be interpreted by the code as an empty string, and will not impact the meaningful text on the line in the final rich text format (RTF) document.
 - The <b>hashtag character is reserved</b> for designating typos, as a hyphen or equal sign overlaid with a hashtag are very similar to a hashtag 
   character by itself and would lead to optical character recognition (OCR) accuracy loss if it were used as a regular character.
-- Of note, the typewriter with which the code was developped  (1968 Olivetti Underwood Lettra 33) doesn’t have specific type slugs for 
+- Of note, the typewriter with which the code was developped  (1968 Olivetti Underwood Lettra 33, you can test out my model and dataset at the following link: https://drive.google.com/drive/folders/1t2OW0AkKHH7sAIvgfbhd_2scFXG294a2?usp=sharing) doesn’t have specific type slugs for 
   number one (1) nor zero (0). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
   and assign the value to instances of lowercase “L” and uppercase “O” accordingly. It also converts the uppercase “O” to zero if it is 
   in one of the closing RTF formatting prompts (e.g. \iO is changed to \i0). For an in-depth explanation of all the most common RTF commands, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html.
