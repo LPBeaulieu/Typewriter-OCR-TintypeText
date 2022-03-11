@@ -275,7 +275,7 @@ with alive_bar(len(image_names)) as bar:
                 #(to exclude "double quote"), and if that element is either a letter or one of
                 #the rtf escape symbols:
                 #(\' (ASCII rtf character escape), \- (hyphenation point) or \_ (nonbreaking hyphen))
-                if (i < len(text)-1 and text[i] == "=" and len(text[+1]) == 1  and
+                if (i < len(text)-1 and text[i] == "=" and len(text[i+1]) == 1 and
                 (text[i+1].isalpha() or text[i+1] in ["'", "-", "_"])):
                     text[i] = "\\"
                 #If the label is "double quote" or "'", it is replaced  with the corresponding
