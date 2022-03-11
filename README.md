@@ -128,7 +128,7 @@ Importantly, <b>such ".txt" files should be created, modified and saved exclusiv
   - <b>"<"</b>: "blank" character rectangle, which corresponds to a space. These character images are stored in the "space" subfolder within the "Dataset" folder.
   - <b>"~"</b>: "typo" character rectangle (any character overlaid with "#"). These character images are stored in the "empty" subfolder within the "Dataset" folder. 
   - <b>"@"</b>: "to be deleted" character rectangle (any undesired artifact or typo that wasn't picked up while typing on the typewriter). The 
-    "to be deleted" subfolder (within the Dataset folder) and all its contents is automatically deleted and the characters labelled with "@" in the text file will be absent
+    "to be deleted" subfolder (within the Dataset folder) and all its contents is automatically deleted and the characters labelled with "@" in the ".txt" file will be absent
     from the dataset, to avoid training on this erroneous data.
   - All the other characters in the ".txt" files are the same as those that you typed on your typewriter. The character images are stored in subfolders within the "Dataset" folder bearing the character's name (e.g. "a" character images are stored in the subfolder named "a").
  
