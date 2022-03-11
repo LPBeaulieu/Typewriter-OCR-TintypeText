@@ -43,7 +43,7 @@
 - Of note, the typewriter with which the code was developped  (1968 Olivetti Underwood Lettra 33, you can test out my model and dataset at the following link: https://drive.google.com/drive/folders/1t2OW0AkKHH7sAIvgfbhd_2scFXG294a2?usp=sharing) doesn’t have specific type slugs for 
   number one (1) nor zero (0). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
   and assign the value to instances of lowercase “L” and uppercase “O” accordingly. It also converts the uppercase “O” to zero if it is 
-  in one of the closing RTF formatting prompts (e.g. \iO is changed to \i0). For an in-depth explanation of all the most common RTF commands, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html.
+  in one of the closing RTF formatting prompts (e.g. \iO is changed to \i0). Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b>, which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html.
 
 Despite these issues, the code has successfully located characters (segmentation step) on lines with at least 5 successive letters with a success 
 rate above 99.99% for the training/validation data consisting of over 25,000 characters. The only issue reported with the training/validation 
