@@ -136,7 +136,7 @@ Importantly, <b>such ".txt" files should be created, modified and saved exclusiv
   
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/Folder%20tree%20structure.jpg" alt="Example of '.txt' file creation"></a>
+ <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/Folder%20tree%20structure%20image.jpg" alt="Example of '.txt' file creation"></a>
 </p><hr>
 The image above shows the folder tree structure of your working folder (above), along with the label subfolders within the "Dataset" folder (below).
  
