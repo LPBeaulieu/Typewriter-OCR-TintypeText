@@ -112,6 +112,15 @@ automatically by the code.
 <b>You might need to alter the values of the variables "character_width" (default value of 55 pixels for 8 1/2" x 11" typewritten pages 
   scanned at a resolution of 600 dpi) and "spacer_between_character" default value of 5 pixels, as your typewriter may have a different typeset than that of my typewriter (1968 Olivetti Underwood Lettra 33).</b>
 
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/TintypeText%20demo%20image.jpg" alt="Welcome to Tintype¶Text!"></a>
+</p>
+The image above illustrates the format of the ".txt" file listing all of the character rectangle labels. In the first line, you can note that four of the characters are labelled as "@", which maps to the category "to be deleted". The three letters (C, X and I) have significant ink splattering and will not be included in the training data, as they are not representative of these characters. The fourth "@" on the first line corresponds to an artifact (some noise was above the filtering threshold and was picked up as a character). We also do not want to include it in the training data. The "lesser than" symbol highlighted in yellow on line 11 in the ".txt" file corresponds to an "empty" rectangle, which is mapped to the "space" category in the Dataset folder. The very last line of the typewriter scan image contains two typos (two characters overlaid with a hashtag symbol). They are represented by a "~" symbol in the ".txt" file on line 19. All the other characters rectangles are represented by their own characters in the ".txt" file. 
+
+Of note, it is important to  create, modify and save such ".txt" files exclusively in basic text editors (such as Text Editor in Ubuntu 20.04), as more elaborate word processors would include extra formatting information that would interfere with the correct mapping of the character rectangles to their labels in the ".txt" file.
+
+
  <b>File 2: create_dataset.py</b>- This code will crop the individual characters in the same way as the create_rectangles.py code,
  and will then open the "txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
  label subfolder within the Dataset folder, which is created automatically by the code.
