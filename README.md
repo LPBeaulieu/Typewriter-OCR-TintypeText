@@ -103,7 +103,7 @@ mkdir "OCR Raw Data" "Training&Validation Data"
 
 ## 🎈 Usage <a name="usage"></a>
 There are four different python code files that are to be run in sequence. <br><br>
-<b>File 1: create_rectangles.py</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
+<b>File 1: "create_rectangles.py"</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
 the individual characters on the typewritten image) and then write a ".txt" file with the correct labels for each rectangle. The mapping
 of every rectangle to a label will allow to generate a dataset of character images with their corresponding labels. The typewriter
 page images overlayed with the character rectangles are stored in the "Page image files with rectangles" folder, which is created
@@ -120,7 +120,7 @@ The image above illustrates the format of the ".txt" file listing all of the cha
 <br><br>
 Importantly, <b>such ".txt" files should be created, modified and saved exclusively in basic text editors</b> (such as Text Editor in Ubuntu 20.04), as more elaborate word processors would include extra formatting information that would interfere with the correct mapping of the character rectangles to their labels in the ".txt" file.
 <br><br>
- <b>File 2: create_dataset.py</b>- This code will crop the individual characters in the same way as the create_rectangles.py code,
+ <b>File 2: "create_dataset.py"</b>- This code will crop the individual characters in the same way as the "create_rectangles.py" code,
  and will then open the "txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
  label subfolder within the "Dataset" folder, which is created automatically by the code. <br><br>
  A good practice when creating a dataset is to make the ".txt" file and then run the "create_dataset.py" code one page at a time (only one JPEG image and its corresponding ".txt" file at a time in the "Training&Validation Data" folder) to validate that the labels in the ".txt" file line up with the character rectangles on the typewriter image. Such a validation step involves opening every "Dataset" subfolder and ensuring that every image corresponds to its subfolder label (pro tip: select the icon display option in the folder in order to display the image thumbnails, which makes the validation a whole lot quicker). You will need to delete the "Dataset" folder in between every page, otherwise it will add the labels to the existing ones within the subfolders. This makes it more manageable to correct any mistakes in the writing of the ".txt" files. Of note, some of the spaces are picked up as characters and framed with rectangles. You need to label those spaces with a lesser-than sign ("<"). Here is the list of symbols present in the ".txt" files mapping to the different characters rectangles:
@@ -134,7 +134,7 @@ Importantly, <b>such ".txt" files should be created, modified and saved exclusiv
  
 Once you're done validating the individual ".txt" files, you can delete the "Dataset" folder once more, add all of the ".txt" files along with their corresponding JPEG images to the "Training&Validation Data" folder and run the "create_dataset.py" code to get your complete dataset! 
   
-  <br><b>File 3: train_model.py</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
+  <br><b>File 3: "train_model.py"</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
   within the Dataset folder. It will also provide you with the accuracy of the model in making OCR predictions, which will be displayed
   in the command line for every epoch (run through the entire dataset). The default hypeparameters (number of epochs=3, batch size=64, 
   learning rate=0.005, kernel size=5) were optimal and consistently gave OCR accuracies above 99.8%, provided a good sized dataset is used (above 25,000 characters).  
@@ -148,7 +148,7 @@ Once you're done validating the individual ".txt" files, you can delete the "Dat
   ```
   learn = load_learner(cwd + '/your_model_name')
   ```
-  <br><b>File 4: get_predictions.py</b>- This code will perform optical character recognition (OCR) on JPEG images of scanned typewritten text
+  <br><b>File 4: "get_predictions.py"</b>- This code will perform optical character recognition (OCR) on JPEG images of scanned typewritten text
   that you will place in the folder "OCR Raw Data". 
   
   <b>Please note that all of the JPEG file names in the "OCR Raw Data" folder must contain at least one hyphen ("-") in order for the code
