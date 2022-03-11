@@ -6,7 +6,10 @@
 
 <div align="center">
 
+  
   [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/LPBeaulieu/TintypeText/blob/main/LICENSE)
+  [![GitHub last commit](https://img.shields.io/github/last-commit/LPBeaulieu/TintypeText)](https://github.com/LPBeaulieu/TintypeText)
+  [![GitHub issues](https://img.shields.io/github/issues/LPBeaulieu/TintypeText)](https://github.com/LPBeaulieu/TintypeText)
 
 </div>
 
