@@ -49,20 +49,5 @@ def conv(number_inputs, number_features, kernel_size = 5, activation_function = 
 
 learn = fit()
 
-# #The following lines of code allow to check the statistics of the model.
-# print("")
-# print(learn.summary())
-# characters = DataBlock(blocks = (ImageBlock(cls=PILImageBW), CategoryBlock),
-# get_items = get_image_files, splitter = RandomSplitter(valid_pct=0.2, seed = 42),
-# get_y = parent_label,
-# batch_tfms = Normalize())
-# print("")
-# print(characters.summary(path))
-
-# #The following lines of code allow to check batch normalization results
-# dataloaders = get_dataloaders()
-# x,y = dataloaders.one_batch()
-# print(x.mean(dim=[0,2,3]), x.std(dim=[0,2,3]))
-
 #Export the model
 learn.export(cwd + "/typewriter_OCR_cnn_model")
