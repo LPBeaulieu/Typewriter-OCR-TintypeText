@@ -5,8 +5,7 @@
 <h3 align="center">Tintype¶Text</h3>
 
 <div align="center">
-
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/LPBeaulieu/TintypeText/blob/main/LICENSE)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/LPBeaulieu/TintypeText/blob/main/LICENSE)
 
 </div>
 
