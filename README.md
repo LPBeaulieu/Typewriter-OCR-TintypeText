@@ -122,8 +122,7 @@ Of note, it is important to  <b>create, modify and save such ".txt" files exclus
 <br><br>
  <b>File 2: create_dataset.py</b>- This code will crop the individual characters in the same way as the create_rectangles.py code,
  and will then open the "txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
- label subfolder within the "Dataset" folder, which is created automatically by the code.
-  
+ label subfolder within the "Dataset" folder, which is created automatically by the code. <br><br>
  A good practice when creating a dataset is to make the ".txt" file and then run the "create_dataset.py" code one page at a time (only one JPEG image and its corresponding ".txt" file at a time in the "Training&Validation Data" folder) to validate that the labels in the ".txt" file line up with the character rectangles on the typewriter image. Such a validation step involves opening every "Dataset" subfolder and ensuring that every image corresponds to its subfolder label (Pro tip: select the icon display option in the folder in order to display the image thumbnails, which makes the validation a whole lot quicker). You will need to delete the "Dataset" folder in between every page, otherwise it will add the labels to the existing ones within the subfolders. This makes it more manageable to correct any mistakes in the 
  writing of the ".txt" files. Of note, some of the spaces are picked up as characters
  and framed with rectangles. You need to label those spaces with a lesser-than sign ("<"). Here is the list of symbols present in the ".txt" files mapping to 
