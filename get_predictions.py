@@ -332,9 +332,10 @@ with alive_bar(len(image_names)) as bar:
             #corresponding curly brackets. Should you want to use the advanced rtf formatting mode,
             #simply comment out the preceding line of code and activate the following one.
             # text = (re.sub('[" "]+', " ", "".join(text)).replace("((", "{").replace("))", "}")
-            # .replace(r"\bO", r"\b0").replace(r"\iO", r"\i0").replace(r"\scapsO", r"\scaps0")
-            # .replace(r"\strikeO", r"\strike0").replace(r"\subO", r"\sub0")
-            # .replace(r"\superO", r"\super0").replace(r"\ulO", r"\ul0"))
+            # .replace(r"\bO", r"\b0 ").replace(r"\iO", r"\i0 ").replace(r"\scapsO", r"\scaps0 ")
+            # .replace(r"\strikeO", r"\strike0 ").replace(r"\ulO", r"\ul0 ").replace(" .", ".")
+            # .replace(" ,", ",").replace(" :", ":").replace(" ;", ";").replace(" \\'94", "\\'94")
+            # .replace(" \\'92", "\\'92").replace(" )", ")").replace(" ?", "?").replace(" !", "!"))
 
             f.write(text)
             bar()
