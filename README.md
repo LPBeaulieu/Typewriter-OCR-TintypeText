@@ -24,7 +24,7 @@
 - [Dependencies / Limitations](#limitations)
 - [Setting up a local environment](#getting_started)
 - [Usage](#usage)
-- [Authors](#authors)
+- [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
 ## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
