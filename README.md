@@ -6,8 +6,7 @@
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/LPBeaulieu/TintypeText/blob/main/LICENSE)
 
 </div>
 
