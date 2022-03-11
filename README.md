@@ -134,6 +134,12 @@ Importantly, <b>such ".txt" files should be created, modified and saved exclusiv
  
   <b>Once you're done validating</b> the individual ".txt" files, you can delete the "Dataset" folder once more, add <b>all of the ".txt" files along with their corresponding JPEG images</b> to the "Training&Validation Data" folder and run the "create_dataset.py" code to get your complete dataset! 
   
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/txt%20file%20example.jpg" alt="Example of '.txt' file creation"></a>
+</p><hr>
+The image above shows the folder tree structure of your working folder (above), along with the label subfolders within the "Dataset" folder (below).
+ 
   <br><b>File 3: "train_model.py"</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
   within the "Dataset" folder. It will also provide you with the accuracy of the model in making OCR predictions, which will be displayed
   in the command line for every epoch (run through the entire dataset). The default hypeparameters (number of epochs=3, batch size=64, 
