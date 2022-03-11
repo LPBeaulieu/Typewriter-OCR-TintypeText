@@ -209,7 +209,7 @@ with alive_bar(len(image_names)) as bar:
             for i in range(1, len(chars_x_y_coordinates)):
                 pixels_between_chars = chars_x_y_coordinates[i][0][0] - chars_x_y_coordinates[i-1][1][0]
                 if (chars_x_y_coordinates[i][0][1] != chars_x_y_coordinates[i-1][0][1] or
-                pixels_between_chars > 0.05*character_width):
+                pixels_between_chars > 0.15*character_width):
                     space_indices.append(i + space_index_correction_factor)
                     space_index_correction_factor+=1
 
