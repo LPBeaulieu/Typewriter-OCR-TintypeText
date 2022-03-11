@@ -39,7 +39,7 @@
   four or fewer letters, one could make up for the missing letters by using any character (other than "#") overlaid with a hashtag, which will 
   be interpreted by the code as an empty string, and will not impact the meaningful text on the line in the final rich text format (RTF) document.
 - The <b>hashtag character is reserved</b> for designating typos, as a hyphen or equal sign overlaid with a hashtag are very similar to a hashtag 
-  character by itself and would lead to optical character recognition (OCR) accuracy loss if it were used as a regular character.
+  character by itself and would lead to OCR accuracy loss if it were used as a regular character.
 - It should be noted that the typewriter with which the code was developped  (1968 Olivetti Underwood Lettra 33, you can test out my model and dataset at the following link: https://drive.google.com/drive/folders/1t2OW0AkKHH7sAIvgfbhd_2scFXG294a2?usp=sharing) doesn’t have specific type slugs for 
   number one (1) nor zero (0). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
   and assign the value to instances of lowercase “L” and uppercase “O” accordingly. It also converts the uppercase “O” to zero if it is 
@@ -148,7 +148,7 @@ Importantly, <b>such ".txt" files should be created, modified and saved exclusiv
   ```
   learn = load_learner(cwd + '/your_model_name')
   ```
-  <br><b>File 4: "get_predictions.py"</b>- This code will perform optical character recognition (OCR) on JPEG images of scanned typewritten text
+  <br><b>File 4: "get_predictions.py"</b>- This code will perform OCR on JPEG images of scanned typewritten text
   that you will place in the folder "OCR Raw Data". 
   
   <b>Please note that all of the JPEG file names in the "OCR Raw Data" folder must contain at least one hyphen ("-") in order for the code
