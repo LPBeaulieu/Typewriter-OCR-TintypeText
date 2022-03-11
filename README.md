@@ -47,7 +47,7 @@
 
 Despite these issues, the code has successfully located characters (segmentation step) on lines with at least 5 successive letters with a success 
 rate above 99.99% for the training/validation data consisting of over 25,000 characters. The only issue reported with the training/validation 
-data was an omitted double quote. As for the OCR accuracy, it was consistently above 99.8% regardless of the hyperparameters investigated, provided
+data was an omitted double quote. As for the OCR accuracy, it was consistently above 99.8% regardless of the hyperparameters investigated (other than kernel size), provided
 a good sized dataset is used for training. 
 
 
