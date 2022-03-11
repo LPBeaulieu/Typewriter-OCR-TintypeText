@@ -117,10 +117,9 @@ automatically by the code.
  <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/txt%20file%20example.jpg" alt="Example of '.txt' file creation"></a>
 </p><hr>
 The image above illustrates the format of the ".txt" file listing all of the character rectangle labels. In the first line, you can note that four of the characters are labelled as "@", which maps to the category "to be deleted". The three letters (C, X and I) have significant ink splattering and will not be included in the training data, as they are not representative of these characters. The fourth "@" on the first line corresponds to an artifact (some noise was above the filtering threshold and was picked up as a character). We also do not want to include it in the training data. The "lesser than" symbol highlighted in yellow on line 11 in the ".txt" file corresponds to an "empty" rectangle, which is mapped to the "space" category in the Dataset folder. The very last line of the typewriter scan image contains two typos (two characters overlaid with a hashtag symbol). They are represented by a "~" symbol in the ".txt" file on line 19. All the other characters rectangles are represented by their own characters in the ".txt" file. 
-
+<br><br>
 Of note, it is important to  create, modify and save such ".txt" files exclusively in basic text editors (such as Text Editor in Ubuntu 20.04), as more elaborate word processors would include extra formatting information that would interfere with the correct mapping of the character rectangles to their labels in the ".txt" file.
-
-
+<br><br>
  <b>File 2: create_dataset.py</b>- This code will crop the individual characters in the same way as the create_rectangles.py code,
  and will then open the "txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
  label subfolder within the Dataset folder, which is created automatically by the code.
@@ -136,10 +135,9 @@ Of note, it is important to  create, modify and save such ".txt" files exclusive
   - <b>"@"</b>: "to be deleted" character rectangle (any undesired artifact or typo that wasn't picked up while typing on the typewriter). The 
     "to be deleted" subfolder (within the Dataset folder) and all its contents is automatically deleted and the characters labelled with @ in the text file will be absent
     from the dataset, to avoid training on this erroneous data.
-  - All the other characters in the ".txt" files are the same as those that you typed on your typewriter. The character images are stored in subfolders within the "Dataset" folder
-    bearing the character's name (e.g. "a" character images are stored in the subfolder named "a").
-   
-  <b>File 3: train_model.py</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
+  - All the other characters in the ".txt" files are the same as those that you typed on your typewriter. The character images are stored in subfolders within the "Dataset" folder bearing the character's name (e.g. "a" character images are stored in the subfolder named "a").
+ 
+  <br><b>File 3: train_model.py</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
   within the Dataset folder. It will also provide you with the accuracy of the model in making OCR predictions, which will be displayed
   in the command line for every epoch (run through the entire dataset). The default hypeparameters (number of epochs=3, batch size=64, 
   learning rate=0.005, kernel size=5) were optimal and consistently gave OCR accuracies above 99.8%, provided a good sized dataset is used (above 25,000 characters).  
@@ -153,7 +151,7 @@ Of note, it is important to  create, modify and save such ".txt" files exclusive
   ```
   learn = load_learner(cwd + '/your_model_name')
   ```
-  <b>File 4: get_predictions.py</b>- This code will perform optical character recognition (OCR) on JPEG images of scanned typewritten text
+  <br><b>File 4: get_predictions.py</b>- This code will perform optical character recognition (OCR) on JPEG images of scanned typewritten text
   that you will place in the folder "OCR Raw Data". 
   
   <b>Please note that all of the JPEG file names in the "OCR Raw Data" folder must contain at least one hyphen ("-") in order for the code
