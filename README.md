@@ -122,10 +122,9 @@ Of note, it is important to  <b>create, modify and save such ".txt" files exclus
 <br><br>
  <b>File 2: create_dataset.py</b>- This code will crop the individual characters in the same way as the create_rectangles.py code,
  and will then open the "txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
- label subfolder within the Dataset folder, which is created automatically by the code.
+ label subfolder within the "Dataset" folder, which is created automatically by the code.
   
- A good practice when creating a dataset is to make the ".txt" file and then validate that the labels in the ".txt" file line up
- with the character rectangles on the typewriter image one page at a time. This makes it more manageable to correct any mistakes in the 
+ A good practice when creating a dataset is to make the ".txt" file and then run the "create_dataset.py" code one page at a time (only one JPEG image and its corresponding ".txt" file at a time in the "Training&Validation Data" folder) to validate that the labels in the ".txt" file line up with the character rectangles on the typewriter image (you will need to delete the "Dataset" folder in between every page, otherwise it will add the labels to the existing ones within the subfolders). This makes it more manageable to correct any mistakes in the 
  writing of the ".txt" files. Of note, some of the spaces are picked up as characters
  and framed with rectangles. You need to label those spaces with a lesser-than sign ("<"). Here is the list of symbols present in the ".txt" files mapping to 
  the different characters rectangles:
@@ -137,6 +136,8 @@ Of note, it is important to  <b>create, modify and save such ".txt" files exclus
     from the dataset, to avoid training on this erroneous data.
   - All the other characters in the ".txt" files are the same as those that you typed on your typewriter. The character images are stored in subfolders within the "Dataset" folder bearing the character's name (e.g. "a" character images are stored in the subfolder named "a").
  
+Once you're done validating the individual ".txt" files, you can delete the "Dataset" folder once more, add all of the ".txt" files along with their corresponding JPEG images to the "Training&Validation Data" folder and run the "create_dataset.py" code to get your complete dataset! 
+  
   <br><b>File 3: train_model.py</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
   within the Dataset folder. It will also provide you with the accuracy of the model in making OCR predictions, which will be displayed
   in the command line for every epoch (run through the entire dataset). The default hypeparameters (number of epochs=3, batch size=64, 
