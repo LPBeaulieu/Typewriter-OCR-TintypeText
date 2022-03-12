@@ -1,16 +1,11 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/TintypeText%20demo%20image.jpg" alt="Welcome to Tintype¶Text!"></a>
-</p>
+![Image 1](https://github.com/LPBeaulieu/TintypeText/blob/main/TintypeText%20demo%20image.jpg)
 <h3 align="center">Tintype¶Text</h3>
-
 <div align="center">
-
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/LPBeaulieu/TintypeText/blob/main/LICENSE)
   [![GitHub last commit](https://img.shields.io/github/last-commit/LPBeaulieu/TintypeText)](https://github.com/LPBeaulieu/TintypeText)
   [![GitHub issues](https://img.shields.io/github/issues/LPBeaulieu/TintypeText)](https://github.com/LPBeaulieu/TintypeText)
-
+  
 </div>
 
 ---
@@ -45,7 +40,7 @@
 - It should be noted that the typewriter with which the code was developped  (1968 Olivetti Underwood Lettra 33, you can test out my model and dataset at the following link: https://drive.google.com/drive/folders/1t2OW0AkKHH7sAIvgfbhd_2scFXG294a2?usp=sharing) doesn’t have specific type slugs for 
   number one (1) nor zero (0). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
   and assign the value to instances of lowercase “L” and uppercase “O” accordingly. It also converts the uppercase “O” to zero if it is 
-  in one of the closing RTF formatting commands (e.g. \iO is changed to \i0). Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b> if it is followed by a letter or an RTF escape (\\' (ASCII rtf character escape), \\- (hyphenation point) or \\_ (nonbreaking hyphen)), which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands and escapes, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html.
+  in one of the closing RTF formatting commands (e.g. \iO is changed to \i0). Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b> if it is followed by a letter or an RTF escape (\\' (ASCII rtf character escape), \\- (hyphenation point) or \\_ (nonbreaking hyphen)), which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands and escapes, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html. To keep things as simple as possible in the default RTF mode of the "get_predictions.py" code, the use of curly brackets "{}" is disabled and "=par" is changed for "\par\pard" after OCR ("=" is used as there are no backslashes on typewriters). This means that the paragraph-formatting attributes (such as centered alignment, "<i>qc</i>" in the first line of the image above) are returned to their default values automatically when a new paragraph is started by typing "=par" on the typewriter.
 
 Despite these issues, the code has successfully located characters (segmentation step) on lines with at least 5 successive letters with a success 
 rate above 99.99% for the training/validation data consisting of over 25,000 characters. The only issue reported with the training/validation 
@@ -114,10 +109,7 @@ automatically by the code.
 <b>You might need to alter the values of the variables "character_width" (default value of 55 pixels for 8 1/2" x 11" typewritten pages 
   scanned at a resolution of 600 dpi) and "spacer_between_character" default value of 5 pixels, as your typewriter may have a different typeset than that of my typewriter (1968 Olivetti Underwood Lettra 33).</b>
 
-<p align="center">
-  <a href="" rel="noopener">
- <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/txt%20file%20example.jpg" alt="Example of '.txt' file creation"></a>
-</p><hr>
+![Image 2](https://github.com/LPBeaulieu/TintypeText/blob/main/txt%20file%20example.jpg)<hr>
 The image above illustrates the format of the ".txt" file listing all of the character rectangle labels. In the first line, you can note that four of the characters are labelled as "@", which maps to the category "to be deleted". The three letters (C, X and I) have significant ink splattering and will not be included in the training data, as they are not representative of these characters. The fourth "@" on the first line corresponds to an artifact (some noise was above the filtering threshold and was picked up as a character). We also do not want to include it in the training data. The "lesser than" symbol highlighted in yellow on line 11 in the ".txt" file corresponds to an "empty" rectangle, which is mapped to the "space" category in the "Dataset" folder. The very last line of the typewriter scan image contains two typos (two characters overlaid with a hashtag symbol). They are represented by a "~" symbol in the ".txt" file on line 19. All the other characters rectangles are represented by their own characters in the ".txt" file. 
 <br><br>
 Importantly, <b>such ".txt" files should be created, modified and saved exclusively in basic text editors</b> (such as Text Editor in Ubuntu 20.04), as more elaborate word processors would include extra formatting information that would interfere with the correct mapping of the character rectangles to their labels in the ".txt" file.
@@ -136,10 +128,7 @@ Importantly, <b>such ".txt" files should be created, modified and saved exclusiv
  
   <b>Once you're done validating</b> the individual ".txt" files, you can delete the "Dataset" folder once more, add <b>all of the ".txt" files along with their corresponding JPEG images</b> to the "Training&Validation Data" folder and run the "create_dataset.py" code to get your complete dataset! 
   
-<p align="center">
-  <a href="" rel="noopener">
- <img src="https://github.com/LPBeaulieu/TintypeText/blob/main/Folder%20tree%20structure%20image.jpg" alt="Example of '.txt' file creation"></a>
-</p><hr>
+![Image 3](https://github.com/LPBeaulieu/TintypeText/blob/main/Folder%20tree%20structure%20image.jpg)<hr>
 The image above shows the folder tree structure of your working folder (above), along with the label subfolders within the "Dataset" folder (below).
  
   <br><b>File 3: "train_model.py"</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
