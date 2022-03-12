@@ -45,7 +45,7 @@
 Despite these issues, the code has successfully located characters (segmentation step) on lines with at least 5 successive letters with a success 
 rate above 99.99% for the training/validation data consisting of over 25,000 characters. The only issue reported with the training/validation 
 data was an omitted double quote. As for the OCR accuracy, it was consistently above 99.8% regardless of the hyperparameters investigated (other than kernel size), provided
-a good sized dataset is used for training. 
+a good-sized dataset is used for training. 
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -134,7 +134,7 @@ The image above shows the folder tree structure of your working folder (above), 
   <br><b>File 3: "train_model.py"</b>- This code will train a convoluted neural network deep learning model from the labelled character images 
   within the "Dataset" folder. It will also provide you with the accuracy of the model in making OCR predictions, which will be displayed
   in the command line for every epoch (run through the entire dataset). The default hypeparameters (number of epochs=3, batch size=64, 
-  learning rate=0.005, kernel size=5) were optimal and consistently gave OCR accuracies above 99.8%, provided a good sized dataset is used (above 25,000 characters).  
+  learning rate=0.005, kernel size=5) were optimal and consistently gave OCR accuracies above 99.8%, provided a good-sized dataset is used (above 25,000 characters).  
   In my experience with this project, varying the value of any hyperparameter other than the kernel size did not lead to significant variations in accuracy.
   As this is a simple deep learning task, the accuracy relies more heavily on having good quality segmentation and character images that 
   accurately reflect those that would be found in text. Ideally, some characters would be typed with a fresh typewriter ribbon and others with an old one,
