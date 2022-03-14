@@ -74,12 +74,12 @@ source env/bin/activate
 
 <b>Step 4</b>- Install <b>PyTorch</b> (Required Fastai library to convert images to a format usable for deep learning) using the following command (or the equivalent command found at https://pytorch.org/get-started/locally/ suitable to your system):
 ```
-pip install fastai
+pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 ```
 
 <b>Step 5</b>- Install the <i>CPU-only</i> version of <b>Fastai</b> (Deep Learning Python library, the CPU-only version suffices for this application, as the character images are very small in size):
 ```
-pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+pip install fastai
 ```
 
 <b>Step 6</b>- Install <b>OpenCV</b> (Python library for image segmentation):
