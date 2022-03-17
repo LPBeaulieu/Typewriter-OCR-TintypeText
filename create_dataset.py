@@ -137,6 +137,7 @@ image_names = [file_name for file_name in sorted(os.listdir(cwd + "/Training&Val
 #Generate cropped character images from the image files listed in the "image_names" list and store
 #them in the "Dataset" folder. 
 with alive_bar(len(image_names)) as bar:
+    char_index = 0
     for image_name in image_names:
         print(f'\nCurrently processing image entitled: "{image_name}"\n')
         text_image = cv2.imread('Training&Validation Data/' + str(image_name))
