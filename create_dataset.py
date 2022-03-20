@@ -101,16 +101,20 @@ def get_character_x_y_coordinates(image):
                 chars_x_min_maxes[character_counter] = [character_center_x - rectangle_half_width,
                     character_center_x + rectangle_half_width]
                 #This if statement removes any overlaping characters, of which the difference between
-                #their x_minima is lower or equal to 0.40 times "character_width". If your typewriter
-                #has a lot of ghosting (faint outline of the preceding character), whe segmentation
-                #code might pick up the ghosting as characters, and you would end up with many
-                #overlapping characters. If such is the case, you would need to increase the
-                #decimal multiplyer from 0.40*character_width to about 0.55*character_width).
-                #Conversely, if your typewriter has very little ghosting but the spacing
-                #between characters is somwhat irregular, you might end up with staggered
-                #character rectangles. In order to avoid missing out on some information,
-                #you would want to make the segmentation more inclusive/sensitive by decreasing
-                #the decimal multiplyer from about 0.55*character_width to 0.40*character_width.
+                #their x_minima is lower or equal to 0.40 times "character_width". IYou might need to 
+                #alter the values of the variables "character_width" (default value of 55 pixels for 
+                #8 1/2" x 11" typewritten pages scanned at a resolution of 600 dpi) and 
+                #"spacer_between_character" default value of 5 pixels, as your typewriter may have a 
+                #different typeset than that of my typewriter (1968 Olivetti Underwood Lettra 33). 
+                #Also, if your typewriter has a lot of ghosting (faint outline of the preceding character),
+                #the segmentation code might pick up the ghosting as characters, and you would end up with 
+                #many overlapping characters. If such were the case, you would need to increase the 
+                #decimal multiplyer at line 115 of "create_dataset.py" from 0.40*character_width to about 
+                #0.55*character_width). Conversely, if your typewriter has very little ghosting but the 
+                #spacing between characters is somwhat irregular, you might end up with 
+                #staggered/overlapping character rectangles. In order to avoid missing out on some 
+                #information, you would want to make the segmentation more inclusive/sensitive by 
+                #decreasing the decimal multiplyer from about 0.55*character_width to 0.40*character_width.
                 if (character_counter > 0 and (chars_x_min_maxes[character_counter][0] -
                 chars_x_min_maxes[character_counter-1][0]) <= 0.40*character_width):
                     chars_x_min_maxes.pop(character_counter)
