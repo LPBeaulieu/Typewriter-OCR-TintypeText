@@ -101,9 +101,18 @@ def get_character_x_y_coordinates(image):
                 chars_x_min_maxes[character_counter] = [character_center_x - rectangle_half_width,
                     character_center_x + rectangle_half_width]
                 #This if statement removes any overlaping characters, of which the difference between
-                #their x_minima is lower or equal to 0.55 times "character_width".
+                #their x_minima is lower or equal to 0.40 times "character_width". If your typewriter
+                #has a lot of ghosting (faint outline of the preceding character), whe segmentation
+                #code might pick up the ghosting as characters, and you would end up with many
+                #overlapping characters. If such is the case, you would need to increase the
+                #decimal multiplyer from 0.40*character_width to about 0.55*character_width).
+                #Conversely, if your typewriter has very little ghosting but the spacing
+                #between characters is somwhat irregular, you might end up with staggered
+                #character rectangles. In order to avoid missing out on some information,
+                #you would want to make the segmentation more inclusive/sensitive by decreasing
+                #the decimal multiplyer from about 0.55*character_width to 0.40*character_width.
                 if (character_counter > 0 and (chars_x_min_maxes[character_counter][0] -
-                chars_x_min_maxes[character_counter-1][0]) <= 0.55*character_width):
+                chars_x_min_maxes[character_counter-1][0]) <= 0.40*character_width):
                     chars_x_min_maxes.pop(character_counter)
                 character_counter-=1
 
@@ -115,8 +124,8 @@ def get_character_x_y_coordinates(image):
             #removing overlaping characters (which is why I didn't write
             #"character_center_x - rectangle_half_width -15, character_center_x + rectangle_half_width + 15" above)
             for char_x_min_max in chars_x_min_maxes:
-                (chars_x_y_coordinates.append([[char_x_min_max[0]-15, char_y_min_max[0]],
-                    [char_x_min_max[1]+15, char_y_min_max[1]]]))
+                (chars_x_y_coordinates.append([[char_x_min_max[0]-20, char_y_min_max[0]],
+                    [char_x_min_max[1]+20, char_y_min_max[1]]]))
                 (cv2.rectangle(text_image_copy, (char_x_min_max[0], char_y_min_max[0]),
                     (char_x_min_max[1], char_y_min_max[1]), (0,255,0),3))
 
@@ -135,7 +144,7 @@ cwd = os.getcwd()
 image_names = [file_name for file_name in sorted(os.listdir(cwd + "/Training&Validation Data/")) if file_name[-4:] == ".jpg"]
 
 #Generate cropped character images from the image files listed in the "image_names" list and store
-#them in the "Dataset" folder. 
+#them in the "Dataset" folder.
 with alive_bar(len(image_names)) as bar:
     char_index = 0
     for image_name in image_names:
