@@ -1,4 +1,4 @@
-![Image RTF basic mode](https://github.com/LPBeaulieu/Typewriter-OCR-TintypeText/blob/main/TintypeText%20basic%20rtf%20mode.jpg)
+![Image RTF basic mode](https://github.com/LPBeaulieu/Typewriter-OCR-TintypeText/blob/main/TintypeText%20basic%20rtf%20mode%20screenshot.jpg)
 <h3 align="center">Tintype¶Text</h3>
 <div align="center">
   
@@ -48,7 +48,7 @@
 - To keep things as simple as possible in the (default) <b>basic RTF mode</b> of the "get_predictions.py" code, the use of curly brackets "{}" is disabled and "=par" is changed for "\par\pard" after OCR ("=" is used as there are no backslashes on typewriters). This means that the paragraph-formatting attributes (such as centered alignment, "<i>qc</i>" in the first line of the image above) are returned to their default values automatically when a new paragraph is started by typing "=par" on the typewriter.
 - In the <b>advanced RTF mode</b>, the use of two successive parenthesis "(( and ))" is translated to curly braces "{ and }", respectively, in the "get_predictions.py" Python code. Also, "=par" is changed to "\par" in the advanced RTF mode (and not to "\par\pard" as in the basic RTF mode). This allows more flexibility and the use of the curly brackets already limits the scope of the RTF commands, so there is no need to have a "\pard" added automatically. The image below illustrates how to use the parenthesis in RTF commands in the advanced RTF mode. 
 
-![Image RTF advanced mode](https://github.com/LPBeaulieu/Typewriter-OCR-TintypeText/blob/main/TintypeText%20advanced%20rtf%20mode.jpg)<hr>
+![Image RTF advanced mode](https://github.com/LPBeaulieu/Typewriter-OCR-TintypeText/blob/main/TintypeText%20advanced%20rtf%20mode%20screenshot.jpg)<hr>
 
 - It is recommended to include a space between your text and the parentheses (single or double, see image above), to reduce segmentation issues due to staggered character rectangles. The Python code automatically removes these spaces (if present) in the final RTF document (see image above). 
 
