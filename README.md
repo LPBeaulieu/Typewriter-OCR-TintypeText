@@ -16,7 +16,7 @@
   automatically get filtered out, and do not appear in the final RTF text.
   
   - You can get my <b>deep learning models</b> for both typewriters on which I developped the code on my Google Drive (<i>2021 
-Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5gFOJqJurv?usp=sharing and <i>1968 Olivetti Underwood Lettra 33</i> https://drive.google.com/drive/folders/1sykG3zUfr8RJVbk59ClnzHjO3qgkXTmF?usp=sharing, where the datasets and other useful information to build your own datasets may be found). 
+Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5gFOJqJurv?usp=sharing and <i>1968 Olivetti Underwood Lettra 33</i> https://drive.google.com/drive/folders/1sykG3zUfr8RJVbk59ClnzHjO3qgkXTmF?usp=sharing), where the datasets and other useful information to build your own datasets may be found. 
 - The code showcased in this github page is the one that was used to generate a model with 99.93% optical character recognition (OCR) accuracy with the 2021 Royal Epoch typewriter, which is in production and commercially available (I'm not affiliated with them, no worries).
   
     <br> 
@@ -43,9 +43,9 @@ Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5g
 - The <b>hashtag character is reserved</b> for designating typos, as a hyphen or equal sign overlaid with a hashtag are very similar to a hashtag 
   character by itself and would lead to OCR accuracy loss if it were used as a regular character.
 - The <b>"@" symbol is reserved</b> to designate characters that are to be deleted (see description below) and should not be used on your typewriter, if it has such a type slug. 
-- It should be noted that one of the typewriters with which the code was developped  (1968 Olivetti Underwood Lettra 33) doesn’t have specific type slugs for number one (1) nor zero (0). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
-  and assign the value to instances of lowercase “L” and uppercase “O” accordingly. It also converts the uppercase “O” to zero if it is 
-  in one of the closing RTF formatting commands (e.g. \iO is changed to \i0). Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b> if it is followed by a letter or an RTF escape (\\' (ASCII rtf character escape), \\- (hyphenation point) or \\_ (nonbreaking hyphen)), which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands and escapes, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html. 
+- It should be noted that one of the typewriters with which the code was developped  (1968 Olivetti Underwood Lettra 33) doesn’t have specific type slugs for numbers zero (0) and one (1). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
+  and assign the values to instances of uppercase “O” and lowercase “L” accordingly. It also converts the uppercase “O” to zero if it is 
+  in one of the closing RTF formatting commands (e.g. \iO is changed to \i0). Even if your typewriter has typeslugs for zero and one, make sure that they are very distinct in appearance from the uppercase “O” and lowercase “L” in order to ensure good OCR accuracy. Otherwise, just ust the letters instead. Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b> if it is followed by a letter or an RTF escape (\\' (ASCII rtf character escape), \\- (hyphenation point) or \\_ (nonbreaking hyphen)), which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands and escapes, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html. 
 - To keep things as simple as possible in the (default) <b>basic RTF mode</b> of the "get_predictions.py" code, the use of curly brackets "{}" is disabled and "=par" is changed for "\par\pard" after OCR ("=" is used as there are no backslashes on typewriters). This means that the paragraph-formatting attributes (such as centered alignment, "<i>qc</i>" in the first line of the image above) are returned to their default values automatically when a new paragraph is started by typing "=par" on the typewriter.
 - In the <b>advanced RTF mode</b>, the use of two successive parenthesis "(( and ))" is translated to curly braces "{ and }", respectively, in the "get_predictions.py" Python code. Also, "=par" is changed to "\par" in the advanced RTF mode (and not to "\par\pard" as in the basic RTF mode). This allows more flexibility and the use of the curly brackets already limits the scope of the RTF commands, so there is no need to have a "\pard" added automatically. The image below illustrates how to use the parenthesis in RTF commands in the advanced RTF mode. 
 
@@ -110,7 +110,7 @@ mkdir "OCR Raw Data" "Training&Validation Data"
 <b>Step 9</b>- You're now ready to use <b>Tintype¶Text</b>! 🎉
 
 ## 🎈 Usage <a name="usage"></a>
-There are four different python code files that are to be run in sequence. You can skip files 2 and 3 ("create_dataset.py" and "train_model.py", respectively) if you will be using one of the models in the Google Drive link above.<br><br>
+There are four different Python code files that are to be run in sequence. You can skip to file 4 ("get_predictions.py") if you will be using one of the models in the Google Drive link above.<br><br>
 <b>File 1: "create_rectangles.py"</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
 the individual characters on the typewritten image) and then write a ".txt" file with the correct labels for each rectangle. The mapping
 of every rectangle to a label will allow to generate a dataset of character images with their corresponding labels. The typewriter
@@ -118,19 +118,22 @@ page images overlayed with the character rectangles are stored in the "Page imag
 automatically by the code.
 
 You might need to <b>alter the values</b> of the variables "<b>character_width</b>" (default value of 55 pixels for 8 1/2" x 11" typewritten pages 
-scanned at a resolution of 600 dpi) and "<b>spacer_between_character</b>" default value of 5 pixels, as your typewriter may have a different typeset than that of my typewriters (Those parameters were suitable for my <i>2021 Royal Epoch</i> and <i>1968 Olivetti Underwood Lettra 33</i>). Also, if your typewriter has a lot of ghosting (faint outline of the preceding character), the segmentation code might pick up the ghosting as characters, and you would end up with many overlapping characters. If such were the case, you would need to increase the decimal multiplyer from <b>0.40\*character_width</b> to about 0.55\*character_width), see code line below: 
+scanned at a resolution of 600 dpi) and "<b>spacer_between_character</b>" (default value of 5 pixels), as your typewriter may have a different typeset than those of my typewriters (those two default parameters were suitable for both my <i>2021 Royal Epoch</i> and <i>1968 Olivetti Underwood Lettra 33</i> typewriters). Also, if your typewriter has a lot of ghosting (faint outline of the preceding character), the segmentation code might pick up the ghosting as characters, and you would end up with many overlapping characters. If such were the case, you would need to make the segmentation less inclusive/sensitive by increasing the decimal multiplyer from <b>0.40\*character_width</b> to about 0.55\*character_width), see line below or Python code files (which are thoroughly commented) for more explanations: 
 ```
-chars_x_min_maxes[character_counter-1][0]) <= 0.40*character_width)
+chars_x_min_maxes[character_counter][0] - chars_x_min_maxes[character_counter-1][0]) <= 0.40*character_width
 ```
-Conversely, if your typewriter has very little ghosting but the spacing between characters is somwhat irregular, you might end up with staggered/overlapping character rectangles. In order to avoid missing out on some information, you would want to make the segmentation more inclusive/sensitive by decreasing
-the decimal multiplyer from about 0.55\*character_width to 0.40\*character_width.</b>
-<b>These parameters ("character_width", "spacer_between_characters" and "0.40\*character_width" or "0.55\*character_width" ) should be adjusted the same way in all the python code files (except "train_model.py", where they are absent), to ensure consistent segmentation in all steps of the process</b>.
+Conversely, if your typewriter has very little ghosting, you would want to make the segmentation more inclusive/sensitive by decreasing
+the decimal multiplyer from about 0.55\*character_width to 0.40\*character_width, in order to avoid missing out on some information.</b>
+<b>These parameters ("character_width", "spacer_between_characters" and "0.40\*character_width" or "0.55\*character_width" ) should be adjusted in the same way in all the Python code files (except "train_model.py", where they are absent), to ensure consistent segmentation in all steps of the process</b>.
 
 ![Image txt file processing](https://github.com/LPBeaulieu/TintypeText/blob/main/txt%20file%20example.jpg)<hr>
 The image above illustrates the format of the ".txt" file listing all of the character rectangle labels. In the first line, you can note that four of the characters are labelled as "@", which maps to the category "to be deleted". The three letters (C, X and I) have significant ink splattering and will not be included in the training data, as they are not representative of these characters. The fourth "@" on the first line corresponds to an artifact (some noise was above the filtering threshold and was picked up as a character). We also do not want to include it in the training data. The "lesser than" symbol highlighted in yellow on line 11 in the ".txt" file corresponds to an "empty" rectangle, which is mapped to the "space" category in the "Dataset" folder. The very last line of the typewriter scan image contains two typos (two characters overlaid with a hashtag symbol). They are represented by a "~" symbol in the ".txt" file on line 19. All the other characters rectangles are represented by their own characters in the ".txt" file. 
 <br><br>
 Importantly, <b>such ".txt" files should be created, modified and saved exclusively in basic text editors</b> (such as Text Editor in Ubuntu 20.04), as more elaborate word processors would include extra formatting information that would interfere with the correct mapping of the character rectangles to their labels in the ".txt" file.
-<br><br>
+
+<b>Furthermore, the ".txt" files in the "Training&Validation Data" folder must have identical names to their corresponding JPEG images (minus the file extensions).</b> For example, the file "my_text.txt" would contain the labels corresponding to the raw scanned typewritten page JPEG image (without the character rectangles) named "my_text.jpg". The presence of hyphens in the file name is only necessary for JPEG files intended for OCR predictions (see below), although you could include some hyphens in every file name just as well.
+
+<br>
  <b>File 2: "create_dataset.py"</b>- This code will crop the individual characters in the same way as the "create_rectangles.py" code,
  and will then open the ".txt" file containing the labels in order to create the dataset. Each character image will be sorted in its
  label subfolder within the "Dataset" folder, which is created automatically by the code. <br><br>
@@ -158,20 +161,18 @@ The image above shows the folder tree structure of your working folder (above), 
   to yield character images of varying boldness, once again reflecting the irregularities normally observed when using a typewriter.
   
   When you obtain a model with good accuracy, you should rename it and do a backup of it along with the "Dataset" folder on which it was trained.
-  If you do change the name of the model file, you also need to update its name in the line 157 of "get_predictions.py":
+  If you do change the name of the model file, you also need to update its name in the line 180 of "get_predictions.py":
   ```
   learn = load_learner(cwd + '/your_model_name')
   ```
-  <br><b>File 4: "get_predictions.py"</b>- This code will perform OCR on JPEG images of scanned typewritten text
+  <br><b>File 4: "get_predictions.py"</b>- This code will perform OCR on JPEG images of scanned typewritten text (at a resolution of 600 dpi)
   that you will place in the folder "OCR Raw Data". 
   
   <b>Please note that all of the JPEG file names in the "OCR Raw Data" folder must contain at least one hyphen ("-") in order for the code
   to properly create subfolders in the "OCR Predictions" folder. These subfolders will contain the rich text format (RTF) OCR conversion documents.</b> 
   
-  The reason for this is that when you will scan a multi-page document in a multi-page scanner, you will provide you scanner with a file root name (e.g. "my_text-") and the scanner will number them automatically (e.g."my_text-.jpg", "my_text-0001.jpg", "my_text-0002.jpg", "my_text-"0003.jpg", etc.) and the code would then label the subfolder within the "OCR Predictions" folder as "my_text". The OCR prediction results for each page will be added in sequence to the "my_text.rtf" file within the "my_text" subfolder of the "OCR Predictions" folder. Should you ever want to repeat the OCR prediction for a set of JPEG images, it would then be important to remove the "my_text" subfolder before running the "get_predictions.py" code once more on the same JPEG images within the "OCR Raw Data" folder.
-  
-  <b>Furthermore, the ".txt" files in the "Training&Validation Data" folder must have identical names to their corresponding JPEG images (minus the file extensions).</b> For example, the file "my_text.txt" would contain the labels corresponding to the raw scanned typewritten page JPEG image (without the character rectangles) named "my_text.jpg". The presence of hyphens in the file name is only necessary for JPEG files intended for OCR predictions, although you could include some hyphens in every file name just as well.
-  
+  The reason for this is that when you will scan a multi-page document in a multi-page scanner, you will provide you scanner with a file root name (e.g. "my_text-") and the scanner will number them automatically (e.g."my_text-.jpg", "my_text-0001.jpg", "my_text-0002.jpg", "my_text-"0003.jpg", etc.) and the code would then label the subfolder within the "OCR Predictions" folder as "my_text". The OCR prediction results for each page will be added in sequence to the "my_text.rtf" file within the "my_text" subfolder of the "OCR Predictions" folder. Should you ever want to repeat the OCR prediction for a set of JPEG images, it would then be important to remove the "my_text" subfolder before running the "get_predictions.py" code once more, in order to avoid appending more text to the exising "my_text.rtf" file.
+               
 As fresh typewriter ink ribbons lead to darker text and more ink speckling on the page, in the presence of dark typewritten text you should decrease the segmentation sensitivity (increase the number of non-white y pixels required for a given x coordinate in order for that x coordinate to be included in the segmentation). That is to say that on a fresh ribbon of ink, you should increase the value of 3 (illustrated below) to 5 in the line 56 of "get_predictions.py" in order to avoid including unwanted noise in the character rectangles. 
 ```
 x_pixels = np.where(line_image >= 3)[0] 
@@ -183,7 +184,7 @@ When your typewritten text gets fainter, change that digit back to 3 to make the
   and still get your document polished up in digital form in the end! 🎉📖
   
   
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Authors <a name = "author"></a>
 - 👋 Hi, I’m Louis-Philippe!
 - 👀 I’m interested in natural language processing (NLP) and anything to do with words, really! 📝
 - 🌱 I’m currently reading about deep learning (and reviewing the underlying math involved in coding such applications 🧮😕)
