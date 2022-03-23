@@ -15,7 +15,8 @@
 <p align="left"> A neat feature of <b>Tintype¶Text</b> is that the typos (wrong typewritten characters overlaid with a hashtag)
   automatically get filtered out, and do not appear in the final RTF text.
   
-  - You can test out my <b>deep learning models</b> for both typewriters on which I developped the code (<i>2021 Royal Epoch</i> and <i>1968 Olivetti Underwood Lettra 33</i>) at the following link:  https://drive.google.com/drive/folders/1t2OW0AkKHH7sAIvgfbhd_2scFXG294a2?usp=sharing, where the datasets and other useful information to build your own datasets may be found). 
+  - You can get my <b>deep learning models</b> for both typewriters on which I developped the code on my Google Drive (<i>2021 
+Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5gFOJqJurv?usp=sharing and <i>1968 Olivetti Underwood Lettra 33</i> https://drive.google.com/drive/folders/1sykG3zUfr8RJVbk59ClnzHjO3qgkXTmF?usp=sharing, where the datasets and other useful information to build your own datasets may be found). 
 - The code showcased in this github page is the one that was used to generate a model with 99.93% optical character recognition (OCR) accuracy with the 2021 Royal Epoch typewriter, which is in production and commercially available (I'm not affiliated with them, no worries).
   
     <br> 
