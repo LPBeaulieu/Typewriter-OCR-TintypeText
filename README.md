@@ -171,7 +171,7 @@ The image above shows the folder tree structure of your working folder (above), 
   
   <b>Furthermore, the ".txt" files in the "Training&Validation Data" folder must have identical names to their corresponding JPEG images (minus the file extensions).</b> For example, the file "my_text.txt" would contain the labels corresponding to the raw scanned typewritten page JPEG image (without the character rectangles) named "my_text.jpg". The presence of hyphens in the file name is only necessary for JPEG files intended for OCR predictions, although you could include some hyphens in every file name just as well.
   
-As fresh typewriter ink ribbons lead to darker text and more ink speckling on the page, in the presence of dark typewritten text you should decrease the segmentation sensitivity (increase the number of non-white y pixels required for a given x coordinate in order for that x coordinate to be included in the segmentation). That is to say that on a fresh ribbon of ink, you should increase the value of 3 (illustrated below) to 5 in the line 50 of "get_predictions.py" in order to avoid including unwanted noise in the character rectangles. 
+As fresh typewriter ink ribbons lead to darker text and more ink speckling on the page, in the presence of dark typewritten text you should decrease the segmentation sensitivity (increase the number of non-white y pixels required for a given x coordinate in order for that x coordinate to be included in the segmentation). That is to say that on a fresh ribbon of ink, you should increase the value of 3 (illustrated below) to 5 in the line 56 of "get_predictions.py" in order to avoid including unwanted noise in the character rectangles. 
 ```
 x_pixels = np.where(line_image >= 3)[0] 
 ```
