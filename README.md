@@ -109,7 +109,7 @@ mkdir "OCR Raw Data" "Training&Validation Data"
 <b>Step 9</b>- You're now ready to use <b>Tintype¶Text</b>! 🎉
 
 ## 🎈 Usage <a name="usage"></a>
-There are four different python code files that are to be run in sequence. <br><br>
+There are four different python code files that are to be run in sequence. You can skip files 2 and 3 ("create_dataset.py" and "train_model.py", respectively) if you will be using one of the models in the Google Drive link above.<br><br>
 <b>File 1: "create_rectangles.py"</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
 the individual characters on the typewritten image) and then write a ".txt" file with the correct labels for each rectangle. The mapping
 of every rectangle to a label will allow to generate a dataset of character images with their corresponding labels. The typewriter
