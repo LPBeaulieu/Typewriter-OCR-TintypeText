@@ -177,7 +177,7 @@ if not os.path.exists(path):
 #with a batch size of 64, a learning rate of 0.005 and 3 epochs of training yielded a validation accuracy
 #of 99.96%. The average validation accuracy for 4 training runs with the same hyperparameters mentioned above
 #is 99.90% and the optimal model (99.96%) was selected and named Model_Olivetti_1968_Underwood_Lettra_33_acc9996
-learn = load_learner(cwd + '/Model_Royal_2021_Epoch_acc9993')
+learn = load_learner(cwd + '/typewriter_OCR_cnn_model')
 
 with alive_bar(len(image_names)) as bar:
     with open(path + OCR_text_file_name + '-OCR.rtf', 'a+') as f:
