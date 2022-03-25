@@ -67,7 +67,7 @@ allow to run a copy of <b>Tintype¶Text</b> on a local computer.
 The paths included in the code are formated for Unix(Linux) operating systems (OS), so the following instructions 
 are for Linux OS environments.
 
-<b>Step 1</b>- Install the <b>Atom</b> text editor to make editing the code easier:
+<b>Step 1</b>- Go to the command line in your working folder and install the <b>Atom</b> text editor to make editing the code easier:
 ```
 sudo snap install atom --classic
 ```
