@@ -72,13 +72,13 @@ are for Linux OS environments.
 sudo snap install atom --classic
 ```
 
-<b>Step 2</b>- Create a virtual environment (called <i>env</i>) in your project folder:
+<b>Step 2</b>- Create a virtual environment (called <i>env</i>) in your working folder:
 ```
 python3 -m venv env
 ```
 
 <b>Step 3</b>- Activate the <i>env</i> virtual environment <b>(you will need to do this step every time you use the Python code files)</b> 
-in your project folder:
+in your working folder:
 ```
 source env/bin/activate
 ```
