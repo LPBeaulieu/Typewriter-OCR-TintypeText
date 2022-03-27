@@ -62,7 +62,7 @@ a good-sized dataset is used for training.
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 The following instructions will be provided in great detail, as they are intended for a broad audience and will
-allow to run a copy of <b>Tintype¶Text</b> on a local computer. 
+allow to run a copy of <b>Tintype¶Text</b> on a local computer. Here is a link to an instructional video explaining the steps 1 through 8 described below: https://www.youtube.com/watch?v=0wKoznI2zWw.
 
 The paths included in the code are formated for Unix(Linux) operating systems (OS), so the following instructions 
 are for Linux OS environments.
