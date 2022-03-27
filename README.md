@@ -24,7 +24,7 @@ Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5g
 
 ## 📝 Table of Contents
 - [Dependencies / Limitations](#limitations)
-- [Setting up a local environment](#getting_started)
+- [Getting Started](#getting_started)
 - [Usage](#usage)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
