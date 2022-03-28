@@ -114,7 +114,7 @@ There are four different Python code files that are to be run in sequence. You c
 <b>File 1: "create_rectangles.py"</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
 the individual characters on the typewritten image) and then write a ".txt" file with the correct labels for each rectangle. The mapping
 of every rectangle to a label will allow to generate a dataset of character images with their corresponding labels. The typewriter
-page images overlayed with the character rectangles are stored in the "Page image files with rectangles" folder, which is created
+page images overlaid with the character rectangles are stored in the "Page image files with rectangles" folder, which is created
 automatically by the code.
 
 You might need to <b>alter the values</b> of the variables "<b>character_width</b>" (default value of 55 pixels for 8 1/2" x 11" typewritten pages 
