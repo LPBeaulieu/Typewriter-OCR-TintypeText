@@ -110,7 +110,7 @@ mkdir "OCR Raw Data" "Training&Validation Data"
 <b>Step 9</b>- You're now ready to use <b>Tintype¶Text</b>! 🎉
 
 ## 🎈 Usage <a name="usage"></a>
-There are four different Python code files that are to be run in sequence. You can skip ahead to file 4 ("get_predictions.py") if you will be using one of the models in the Google Drive links above. You can find instructions for every Python file in the TintypeText - Typewriter Optical Character Recognition (OCR) playlist on my YouTube channel: https://www.youtube.com/channel/UCgmkyU2j-a6c1rOE6yS6z_A/playlists.<br><br>
+There are four different Python code files that are to be run in sequence. You can skip ahead to file 4 ("get_predictions.py") if you will be using one of the models in the Google Drive links above. You can find instructions for every Python file in the TintypeText - Typewriter Optical Character Recognition (OCR) playlist on my YouTube channel: https://www.youtube.com/watch?v=0wKoznI2zWw&list=PL8fAaOg_mhoEZkbQuRgs8MN-QSygAjdil.<br><br>
 <b>File 1: "create_rectangles.py"</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
 the individual characters on the typewritten image) and then write a ".txt" file with the correct labels for each rectangle. The mapping
 of every rectangle to a label will allow to generate a dataset of character images with their corresponding labels. The typewriter
