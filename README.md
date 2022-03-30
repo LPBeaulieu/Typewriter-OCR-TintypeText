@@ -171,7 +171,7 @@ The image above shows the folder tree structure of your working folder (above), 
   
   The reason for this is that when you will scan a multi-page document in a multi-page scanner, you will provide you scanner with a file root name (e.g. "my_text-") and the scanner will number them automatically (e.g."my_text-.jpg", "my_text-0001.jpg", "my_text-0002.jpg", "my_text-"0003.jpg", etc.) and the code would then label the subfolder within the "OCR Predictions" folder as "my_text". The OCR prediction results for each page will be added in sequence to the "my_text.rtf" file within the "my_text" subfolder of the "OCR Predictions" folder. Should you ever want to repeat the OCR prediction for a set of JPEG images, it would then be important to remove the "my_text" subfolder before running the "get_predictions.py" code once more, in order to avoid appending more text to the exising "my_text.rtf" file.
 
-If you are not using the model trained on my 2021 Royal Epoch typewriter in the Google Drive link above, you will need to change the name of the deep learning model that you are using. That is to say that you will need to change "Model_Royal_2021_Epoch_acc9993" for the name of your model in line 180 of "get_predictions.py":
+If you are not using the model trained on my 2021 Royal Epoch typewriter in the Google Drive link above, you will need to change the name of the deep learning model that you are using. That is to say that you will need to change "Model_Royal_2021_Epoch_acc9993" for the name of your model in line 174 of "get_predictions.py":
                
 ```              
 learn = load_learner(cwd + '/Model_Royal_2021_Epoch_acc9993')
