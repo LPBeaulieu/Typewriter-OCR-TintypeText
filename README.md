@@ -159,7 +159,7 @@ The image above shows the folder tree structure of your working folder (above), 
   to yield character images of varying boldness, once again reflecting the irregularities normally observed when using a typewriter.
   
   When you obtain a model with good accuracy, you should rename it and do a backup of it along with the "Dataset" folder on which it was trained.
-  If you do change the name of the model file, you also need to update its name in the line 180 of "get_predictions.py":
+  If you do change the name of the model file, you also need to update its name in the line 174 of "get_predictions.py":
   ```
   learn = load_learner(cwd + '/your_model_name')
   ```
