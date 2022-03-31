@@ -15,7 +15,7 @@
 <p align="left"> A neat feature of <b>Tintype¶Text</b> is that the typos (wrong typewritten characters overlaid with a hashtag)
   automatically get filtered out, and do not appear in the final RTF text.
   
-  - You can get my <b>deep learning models</b> for both typewriters on which I developped the code on my Google Drive (<i>2021 
+  - You can get my <b>deep learning models</b> for both typewriters on which I developed the code on my Google Drive (<i>2021 
 Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5gFOJqJurv?usp=sharing and <i>1968 Olivetti Underwood Lettera 33</i> https://drive.google.com/drive/folders/1sykG3zUfr8RJVbk59ClnzHjO3qgkXTmF?usp=sharing), where the datasets and other useful information to build your own datasets may be found. 
 - The code showcased in this github page is the one that was used to generate a model with 99.93% optical character recognition (OCR) accuracy with the 2021 Royal Epoch typewriter, which is in production and commercially available (I'm not affiliated with them, no worries).
   
@@ -43,9 +43,9 @@ Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5g
 - The <b>hashtag character is reserved</b> for designating typos, as a hyphen or equal sign overlaid with a hashtag are very similar to a hashtag 
   character by itself and would lead to OCR accuracy loss if it were used as a regular character.
 - The <b>"@" symbol is reserved</b> to designate characters that are to be deleted (see description below) and should not be used on your typewriter, if it has such a type slug. 
-- It should be noted that one of the typewriters with which the code was developped  (1968 Olivetti Underwood Lettera 33) doesn’t have specific type slugs for numbers zero (0) and one (1). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
+- It should be noted that one of the typewriters with which the code was developed  (1968 Olivetti Underwood Lettera 33) doesn’t have specific type slugs for numbers zero (0) and one (1). After the OCR step, the Python code will interpret whether the surrounding characters are also digits 
   and assign the values to instances of uppercase “O” and lowercase “L” accordingly. It also converts the uppercase “O” into zero if it is 
-  in one of the closing RTF formatting commands (e.g. \iO is changed to \i0). Even if your typewriter has typeslugs for zero and one, make sure that they are very distinct in appearance from the uppercase “O” and lowercase “L” in order to ensure good OCR accuracy. Otherwise, just ust the letters instead. Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b> if it is followed by a letter or an RTF escape (\\' (ASCII rtf character escape), \\- (hyphenation point) or \\_ (nonbreaking hyphen)), which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands and escapes, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html. 
+  in one of the closing RTF formatting commands (e.g. \iO is changed to \i0). Even if your typewriter has type slugs for zero and one, make sure that they are very distinct in appearance from the uppercase “O” and lowercase “L” in order to ensure good OCR accuracy. Otherwise, just use the letters instead. Also, the <b>equal sign</b> on the typewriter is interpreted as a <b>backslash</b> if it is followed by a letter or an RTF escape (\\' (ASCII rtf character escape), \\- (hyphenation point) or \\_ (nonbreaking hyphen)), which is useful in RTF commands and escape codes. For an in-depth explanation of all the most common RTF commands and escapes, please consult: https://www.oreilly.com/library/view/rtf-pocket-guide/9781449302047/ch01.html. 
 - To keep things as simple as possible in the (default) <b>basic RTF mode</b> of the "get_predictions.py" code, the use of curly brackets "{}" is disabled and "=par" is changed for "\par\pard" after OCR ("=" is used as there are no backslashes on typewriters). This means that the paragraph-formatting attributes (such as centered alignment, "<i>qc</i>" in the first line of the image above) are returned to their default values automatically when a new paragraph is started by typing "=par" on the typewriter.
 - In the <b>advanced RTF mode</b>, the use of two successive parentheses "(( and ))" is translated to curly braces "{ and }", respectively, in the "get_predictions.py" Python code. Also, "=par" is changed to "\par" in the advanced RTF mode (and not to "\par\pard" as in the basic RTF mode). This allows more flexibility and the use of the curly brackets already limits the scope of the RTF commands, so there is no need to have a "\pard" added automatically. The image below illustrates how to use the parentheses in RTF commands in the advanced RTF mode. 
 
@@ -64,7 +64,7 @@ a good-sized dataset is used for training.
 The following instructions will be provided in great detail, as they are intended for a broad audience and will
 allow to run a copy of <b>Tintype¶Text</b> on a local computer. Here is a link to an instructional video explaining the steps 1 through 8 described below: https://www.youtube.com/watch?v=0wKoznI2zWw.
 
-The paths included in the code are formated for Unix(Linux) operating systems (OS), so the following instructions 
+The paths included in the code are formatted for Unix(Linux) operating systems (OS), so the following instructions 
 are for Linux OS environments.
 
 <b>Step 1</b>- Go to the command line in your working folder and install the <b>Atom</b> text editor to make editing the code easier:
@@ -177,7 +177,7 @@ If you changed the name of your deep learning model, or if you are using one of 
 learn = load_learner(cwd + '/typewriter_OCR_cnn_model')
 ```
                
-As mentionned above, since fresh typewriter ink ribbons lead to darker text and more ink speckling on the page, in the presence of dark typewritten text you should decrease the segmentation sensitivity (increase the number of non-white y pixels required for a given x coordinate in order for that x coordinate to be included in the segmentation). That is to say that on a fresh ribbon of ink, you should increase the value of 3 (illustrated below) to about 6 (results will vary based on your typewriter's signal to noise ratio) in the line 56 of "get_predictions.py" in order to avoid including unwanted noise in the character rectangles. 
+As mentioned above, since fresh typewriter ink ribbons lead to darker text and more ink speckling on the page, in the presence of dark typewritten text you should decrease the segmentation sensitivity (increase the number of non-white y pixels required for a given x coordinate in order for that x coordinate to be included in the segmentation). That is to say that on a fresh ribbon of ink, you should increase the value of 3 (illustrated below) to about 6 (results will vary based on your typewriter's signal to noise ratio) in the line 56 of "get_predictions.py" in order to avoid including unwanted noise in the character rectangles. 
 ```
 x_pixels = np.where(line_image >= 3)[0] 
 ```
