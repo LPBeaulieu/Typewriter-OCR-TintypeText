@@ -38,7 +38,7 @@ Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5g
   typesets and character spacing. It is therefore preferable to train a model on your own typewriter.
 - For best results, the typewritten text should be <b>double spaced</b> to avoid segmentation mistakes or omissions and the 8 1/2" x 11" typewritten pages should be <b>scanned at a resolution of 600 dpi</b>, as this resolution was used when writing the code.
 - Every typewritten line should have <b>at least five adjoining letters</b> in order to be properly detected. Should a line only contain a word with 
-  four or fewer letters, one could make up for the missing letters by using any character (other than "#") overlaid with a hashtag, which will 
+  four or fewer letters, you could make up for the missing letters by using any character (other than "#") overlaid with a hashtag, which will 
   be interpreted by the code as an empty string, and will not impact the meaningful text on the line in the final rich text format (RTF) document.
 - The <b>hashtag character is reserved</b> for designating typos, as a hyphen or equal sign overlaid with a hashtag are very similar to a hashtag 
   character by itself and would lead to OCR accuracy loss if it were used as a regular character.
