@@ -62,7 +62,7 @@ a good-sized dataset is used for training.
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 The following instructions will be provided in great detail, as they are intended for a broad audience and will
-allow to run a copy of <b>Tintype¶Text</b> on a local computer. Here is a link to an instructional video explaining the steps 1 through 8 described below: https://www.youtube.com/watch?v=0wKoznI2zWw.
+allow to run a copy of <b>Tintype¶Text</b> on a local computer. Here is a link to an instructional video explaining the steps 1 through 8 described below: https://www.youtube.com/watch?v=FG9WUW6q3dI&list=PL8fAaOg_mhoEZkbQuRgs8MN-QSygAjdil&index=2.
 
 The paths included in the code are formatted for Unix(Linux) operating systems (OS), so the following instructions 
 are for Linux OS environments.
@@ -110,7 +110,7 @@ mkdir "OCR Raw Data" "Training&Validation Data"
 <b>Step 9</b>- You're now ready to use <b>Tintype¶Text</b>! 🎉
 
 ## 🎈 Usage <a name="usage"></a>
-There are four different Python code files that are to be run in sequence. You can skip ahead to file 4 ("get_predictions.py") if you will be using one of the models in the Google Drive links above. You can find instructions for every Python file in the TintypeText - Typewriter Optical Character Recognition (OCR) playlist on my YouTube channel: https://www.youtube.com/watch?v=0wKoznI2zWw&list=PL8fAaOg_mhoEZkbQuRgs8MN-QSygAjdil.<br><br>
+There are four different Python code files that are to be run in sequence. You can skip ahead to file 4 ("get_predictions.py") if you will be using one of the models in the Google Drive links above. You can find instructions for every Python file in the TintypeText - Typewriter Optical Character Recognition (OCR) playlist on my YouTube channel: https://www.youtube.com/playlist?list=PL8fAaOg_mhoEZkbQuRgs8MN-QSygAjdil.<br><br>
 <b>File 1: "create_rectangles.py"</b>- This Python code enables you to see the segmentation results (the green rectangles delimiting
 the individual characters on the typewritten image) and then write a ".txt" file with the correct labels for each rectangle. The mapping
 of every rectangle to a label will allow to generate a dataset of character images with their corresponding labels. The typewriter
