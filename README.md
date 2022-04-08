@@ -1,3 +1,6 @@
+# TintypeText
+This typewriter OCR application can convert JPEG typewritten text images into RTF documents, while removing typos for you!
+
 ![Image RTF basic mode](https://github.com/LPBeaulieu/Typewriter-OCR-TintypeText/blob/main/TintypeText%20basic%20rtf%20mode%20screenshot.jpg)
 <h3 align="center">Tintype¶Text</h3>
 <div align="center">
