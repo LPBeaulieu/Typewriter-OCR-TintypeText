@@ -67,7 +67,7 @@ a good-sized dataset is used for training.
 The following instructions will be provided in great detail, as they are intended for a broad audience and will
 allow to run a copy of <b>Tintype¶Text</b> on a local computer. Here is a link to an instructional video explaining the steps 1 through 8 described below: https://www.youtube.com/watch?v=FG9WUW6q3dI&list=PL8fAaOg_mhoEZkbQuRgs8MN-QSygAjdil&index=2.
 
-The paths included in the code are formatted for Unix(Linux) operating systems (OS), so the following instructions 
+The paths included in the code are formatted for Unix (Linux) operating systems (OS), so the following instructions 
 are for Linux OS environments.
 
 <b>Step 1</b>- Go to the command line in your working folder and install the <b>Atom</b> text editor to make editing the code easier:
