@@ -21,7 +21,7 @@ This typewriter OCR application can convert JPEG typewritten text images into RT
   - You can get my <b>deep learning models</b> for both typewriters on which I developed the code on my Google Drive (<i>2021 
 Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5gFOJqJurv?usp=sharing and <i>1968 Olivetti Underwood Lettera 33</i> https://drive.google.com/drive/folders/1sykG3zUfr8RJVbk59ClnzHjO3qgkXTmF?usp=sharing), where the datasets and other useful information to build your own datasets may be found. 
 - The code showcased in this github page is the one that was used to generate a model with <b>99.93% optical character recognition (OCR) accuracy</b> with the 2021 Royal Epoch typewriter, which is in production and commercially available (I'm not affiliated with them, no worries).
-- The generalizability of the model trained on a 2021 Royal Epoch typewriter was assessed on another unit of the same model (2019 Royal Epoch typewriter), with a text over 6,000 characters long. It gave an accuracy of 99.22%, thus demonstrating that the model I trained could be used with other  typewriters of the same model (albeit with somewhat lower accuracy).
+- The generalizability of the model trained on a 2021 Royal Epoch typewriter was assessed on another unit of the same model (2019 Royal Epoch typewriter), with a text over 6,000 characters long. It gave an OCR accuracy of 99.22%, thus demonstrating that the model I trained could be used with other  typewriters of the same model (albeit with somewhat lower accuracy).
   
     <br> 
 </p>
