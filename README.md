@@ -15,8 +15,8 @@ This typewriter OCR application can convert JPEG typewritten text images into RT
 
 <p align="left"> <b>Tintype¶Text</b> is a tool enabling you to convert scanned typewritten pages (in JPEG image format) into rich text format (RTF) 
   documents, complete with formatting elements such as text alignment, paragraphs, <u>underline</u>, <i>italics</i>, <b>bold</b> and <del>strikethrough</del>. </p>
-<p align="left"> A neat feature of <b>Tintype¶Text</b> is that the typos (wrong typewritten characters overlaid with a hashtag)
-  automatically get filtered out, and do not appear in the final RTF text.
+<p align="left"> A neat functionality of <b>Tintype¶Text</b> is that the typos (wrong typewritten characters overlaid with a hashtag)
+  automatically get filtered out, and do not appear in the final RTF text. This feature, when combined with erasable typewriter ink (see https://www.reddit.com/r/typewriters/comments/ujqxrh/how_to_make_erasable_typewriter_ink/) brings the typewriter well into the 21<sup>st</sup> century as a data entry tool!
   
   - You can get my <b>deep learning models</b> for both typewriters on which I developed the code on my Google Drive (<i>2021 
 Royal Epoch</i> https://drive.google.com/drive/folders/1DUKqYf7wIkRAobC8fYPjum5gFOJqJurv?usp=sharing and <i>1968 Olivetti Underwood Lettera 33</i> https://drive.google.com/drive/folders/1sykG3zUfr8RJVbk59ClnzHjO3qgkXTmF?usp=sharing), where the datasets and other useful information to build your own datasets may be found. 
