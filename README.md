@@ -107,9 +107,9 @@ pip install opencv-python
 pip install alive-progress
 ```
 
-<b>Step 8</b>- Create the folders "OCR Raw Data" and "Training&Validation Data" in your working folder:
+<b>Step 8</b>- Create the folder "OCR Raw Data" in your working folder:
 ```
-mkdir "OCR Raw Data" "Training&Validation Data" 
+mkdir "OCR Raw Data" 
 ```
 <b>Step 9</b>- You're now ready to use <b>Tintype¶Text</b>! 🎉
 
