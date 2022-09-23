@@ -102,7 +102,7 @@ pip install fastai
 pip install opencv-python
 ```
 
-<b>Step 7</b>- Install <b>alive-Progress</b> (Python module for progress bar displayed in command line):
+<b>Step 7</b>- Install <b>alive-Progress</b> (Python module for a progress bar displayed in command line):
 ```
 pip install alive-progress
 ```
